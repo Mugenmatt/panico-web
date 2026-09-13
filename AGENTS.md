@@ -65,13 +65,11 @@ nunca hardcodear estos valores directamente en otros archivos:
   --color-text: #e8e5e0;
   --color-blood: #8a0303;
   --color-blood-bright: #c41e1e;
-  --font-display: 'Anton', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Poppins', 'Anton', sans-serif;
+  --font-body: 'Poppins', 'Inter', sans-serif;
 }
 ```
 
-- Nunca usar blanco puro (`#ffffff`) ni negro puro (`#000000`) directamente
-  en el diseño — usar los tokens de arriba.
 - Títulos y elementos destacados: `--font-display`, generalmente en
   mayúsculas.
 - Cuerpo de texto: `--font-body`.
