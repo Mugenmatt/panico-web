@@ -4,9 +4,469 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pánico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="app"></div>
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav__lista">
+        <li><a class="nav__link" href="#/" data-route="inicio">Inicio</a></li>
+        <li><a class="nav__link" href="#/proyectos" data-route="proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="#/nosotros" data-route="nosotros">Nosotros</a></li>
+        <li><a class="nav__link" href="#/contacto" data-route="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section data-page="inicio" id="inicio" class="hero page" hidden>
+        <video
+          class="hero__video"
+          muted
+          loop
+          playsinline
+          autoplay
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="/video/hero-panico.mp4" type="video/mp4" />
+        </video>
+
+        <h1 class="hero__titulo">
+          <svg
+            viewBox="0 0 1000 280"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <mask
+                id="hero-mask"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="-20"
+                width="1000"
+                height="320"
+              >
+                <rect x="0" y="-20" width="1000" height="320" fill="white" />
+                <text
+                  x="500"
+                  y="140"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  fill="black"
+                >
+                  PÁNICO
+                </text>
+              </mask>
+            </defs>
+            <rect x="0" y="-20" width="1000" height="320" fill="currentColor" mask="url(#hero-mask)" />
+          </svg>
+          <span class="sr-only">Pánico</span>
+        </h1>
+      </section>
+
+      <section data-page="proyectos" id="proyectos" class="proyectos page" hidden>
+        <header class="proyectos__header">
+          <p class="proyectos__kicker">01 — Obra</p>
+          <h2 class="proyectos__titulo">Proyectos</h2>
+        </header>
+
+        <div class="proyectos__grid">
+          <!--
+            TODO: reemplazar los assets restantes por el material real de Pánico:
+            - videos (proyecto-casa-huesos.mp4, canto-fiambre, necropolis, fosa-comun)
+            - imágenes duplicadas provisionales (canto-fiambre, fosa-comun y
+              manifiesto-miedo repiten imágenes ya existentes)
+          -->
+
+          <article class="proyecto-card card-featured" tabindex="0" aria-label="Proyecto: La casa de los huesos">
+            <div class="proyecto-card__media">
+              <!-- TODO: reemplazar por asset final de Pánico -->
+              <video
+                class="proyecto-card__video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/video/proyecto-casa-huesos.mp4" type="video/mp4" />
+              </video>
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-casa-huesos-poster.jpg"
+                alt="Poster de La casa de los huesos"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">01</span>
+              <span class="proyecto-card__badge">Largometraje</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">La casa de los huesos</h3>
+              <p class="proyecto-card__meta">
+                <span>Largometraje</span>
+                <span>2025</span>
+                <span>Dir. M. Herrera</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: El canto del fiambre">
+            <div class="proyecto-card__media">
+              <!-- TODO: reemplazar por asset final de Pánico -->
+              <video
+                class="proyecto-card__video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/video/proyecto-canto-fiambre.mp4" type="video/mp4" />
+              </video>
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-canto-fiambre-poster.jpg"
+                alt="Fotograma de El canto del fiambre"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">02</span>
+              <span class="proyecto-card__badge">Music Video</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">El canto del fiambre</h3>
+              <p class="proyecto-card__meta">
+                <span>Music Video</span>
+                <span>2024</span>
+                <span>Dir. L. Quiroga</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Señales del subsuelo">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-senales-subsuelo.jpg"
+                alt="Still de Señales del subsuelo"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">03</span>
+              <span class="proyecto-card__badge">Video Arte</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">Señales del subsuelo</h3>
+              <p class="proyecto-card__meta">
+                <span>Video Arte</span>
+                <span>2023</span>
+                <span>Dir. Pánico</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Necrópolis">
+            <div class="proyecto-card__media">
+              <!-- TODO: reemplazar por asset final de Pánico -->
+              <video
+                class="proyecto-card__video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/video/proyecto-necropolis.mp4" type="video/mp4" />
+              </video>
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-necropolis-poster.jpg"
+                alt="Fotograma de Necrópolis"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">04</span>
+              <span class="proyecto-card__badge">Cortometraje</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">Necrópolis</h3>
+              <p class="proyecto-card__meta">
+                <span>Cortometraje</span>
+                <span>2023</span>
+                <span>Dir. T. Irala</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: La niña del tape">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-nina-tape.jpg"
+                alt="Still de La niña del tape"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">05</span>
+              <span class="proyecto-card__badge">Largometraje</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">La niña del tape</h3>
+              <p class="proyecto-card__meta">
+                <span>Largometraje</span>
+                <span>2022</span>
+                <span>Dir. M. Herrera</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Fosa común">
+            <div class="proyecto-card__media">
+              <!-- TODO: reemplazar por asset final de Pánico -->
+              <video
+                class="proyecto-card__video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="/video/proyecto-fosa-comun.mp4" type="video/mp4" />
+              </video>
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-fosa-comun-poster.jpg"
+                alt="Fotograma de Fosa común"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">06</span>
+              <span class="proyecto-card__badge">Music Video</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">Fosa común</h3>
+              <p class="proyecto-card__meta">
+                <span>Music Video</span>
+                <span>2021</span>
+                <span>Dir. R. Ledesma</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Ceibo podrido">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-ceibo-podrido.jpg"
+                alt="Still de Ceibo podrido"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">07</span>
+              <span class="proyecto-card__badge">Visual Still</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">Ceibo podrido</h3>
+              <p class="proyecto-card__meta">
+                <span>Visual Still</span>
+                <span>2025</span>
+                <span>Dir. Pánico</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="proyecto-card card-widescreen" tabindex="0" aria-label="Proyecto: Manifiesto del miedo">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__still"
+                src="/images/proyecto-manifiesto-miedo.jpg"
+                alt="Still cinematográfico de Manifiesto del miedo"
+                loading="lazy"
+              />
+              <span class="proyecto-card__index" aria-hidden="true">08</span>
+              <span class="proyecto-card__badge">Film Still</span>
+            </div>
+            <div class="proyecto-card__info">
+              <h3 class="proyecto-card__titulo">Manifiesto del miedo</h3>
+              <p class="proyecto-card__meta">
+                <span>Film Still</span>
+                <span>2026</span>
+                <span>Dir. Pánico</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section data-page="nosotros" id="sobre-nosotros" class="page pagina nosotros" hidden>
+        <header class="pagina__header">
+          <p class="pagina__kicker">02 — Quiénes somos</p>
+          <h2 class="pagina__titulo">Nosotros</h2>
+        </header>
+
+        <!--
+          TODO: reemplazar el manifiesto y los textos por el texto
+          institucional real de Pánico (historia, enfoque editorial).
+        -->
+        <div class="nosotros__intro">
+          <p class="nosotros__lead" data-reveal>
+            Hacemos terror en serio. Imagen oscura, arte cuidada y una mirada
+            editorial que trata al género con la seriedad que se merece.
+          </p>
+          <div class="nosotros__cuerpo" data-reveal style="--reveal-delay: 0.15s">
+            <p class="nosotros__texto">
+              Somos una productora audiovisual especializada en horror y en
+              videos musicales para bandas. Del video arte al largometraje,
+              trabajamos con el miedo como materia prima.
+            </p>
+            <p class="nosotros__texto">
+              Cada pieza que sale de Pánico no es un encargo: es parte de una
+              misma mirada sobre lo que incomoda.
+            </p>
+            <p class="nosotros__firma">— Pánico</p>
+          </div>
+        </div>
+
+        <!--
+          TODO: ajustar los campos de "Lo que hacemos" al catálogo real de la
+          productora (formatos y géneros que realmente trabajan).
+        -->
+        <div class="nosotros__servicios">
+          <h3 class="nosotros__subtitulo" data-reveal>
+            <span class="nosotros__kicker-lite">Lo que hacemos</span>
+            Formatos y encargos
+          </h3>
+          <ul class="nosotros__lista">
+            <li class="nosotros__item" data-reveal>
+              <span class="nosotros__item-index" aria-hidden="true">01</span>
+              <span class="nosotros__item-nombre">Largometrajes</span>
+            </li>
+            <li class="nosotros__item" data-reveal style="--reveal-delay: 0.08s">
+              <span class="nosotros__item-index" aria-hidden="true">02</span>
+              <span class="nosotros__item-nombre">Cortometrajes</span>
+            </li>
+            <li class="nosotros__item" data-reveal style="--reveal-delay: 0.16s">
+              <span class="nosotros__item-index" aria-hidden="true">03</span>
+              <span class="nosotros__item-nombre">Videos musicales</span>
+            </li>
+            <li class="nosotros__item" data-reveal style="--reveal-delay: 0.24s">
+              <span class="nosotros__item-index" aria-hidden="true">04</span>
+              <span class="nosotros__item-nombre">Video arte y visual stills</span>
+            </li>
+          </ul>
+        </div>
+
+        <!--
+          TODO: reemplazar los números placeholder por las cifras reales de
+          Pánico (años de trabajo, proyectos, bandas, reconocimientos).
+        -->
+        <div class="nosotros__stats">
+          <div class="nosotros__stat" data-reveal>
+            <span class="nosotros__numero" data-placeholder>--</span>
+            <span class="nosotros__stat-nombre">Años de trabajo</span>
+          </div>
+          <div class="nosotros__stat" data-reveal style="--reveal-delay: 0.1s">
+            <span class="nosotros__numero" data-placeholder>--</span>
+            <span class="nosotros__stat-nombre">Proyectos realizados</span>
+          </div>
+          <div class="nosotros__stat" data-reveal style="--reveal-delay: 0.2s">
+            <span class="nosotros__numero" data-placeholder>--</span>
+            <span class="nosotros__stat-nombre">Bandas y artistas</span>
+          </div>
+          <div class="nosotros__stat" data-reveal style="--reveal-delay: 0.3s">
+            <span class="nosotros__numero" data-placeholder>--</span>
+            <span class="nosotros__stat-nombre">Reconocimientos</span>
+          </div>
+        </div>
+
+        <!--
+          TODO: reemplazar el equipo por los integrantes reales de Pánico.
+          Para cada miembro: nombre, rol y foto (assets en public/images/).
+        -->
+        <div class="nosotros__equipo">
+          <h3 class="nosotros__subtitulo" data-reveal>
+            <span class="nosotros__kicker-lite">El equipo</span>
+            Los que hacen ruido
+          </h3>
+          <div class="nosotros__grilla">
+            <article class="miembro" data-reveal>
+              <div class="miembro__foto" aria-hidden="true">
+                <span class="miembro__lugar">Foto</span>
+                <span class="miembro__index">01</span>
+              </div>
+              <h4 class="miembro__nombre">Integrante de Pánico</h4>
+              <p class="miembro__rol">Dirección</p>
+            </article>
+            <article class="miembro" data-reveal style="--reveal-delay: 0.12s">
+              <div class="miembro__foto" aria-hidden="true">
+                <span class="miembro__lugar">Foto</span>
+                <span class="miembro__index">02</span>
+              </div>
+              <h4 class="miembro__nombre">Integrante de Pánico</h4>
+              <p class="miembro__rol">Producción</p>
+            </article>
+            <article class="miembro" data-reveal style="--reveal-delay: 0.24s">
+              <div class="miembro__foto" aria-hidden="true">
+                <span class="miembro__lugar">Foto</span>
+                <span class="miembro__index">03</span>
+              </div>
+              <h4 class="miembro__nombre">Integrante de Pánico</h4>
+              <p class="miembro__rol">Dirección de fotografía</p>
+            </article>
+            <article class="miembro" data-reveal style="--reveal-delay: 0.36s">
+              <div class="miembro__foto" aria-hidden="true">
+                <span class="miembro__lugar">Foto</span>
+                <span class="miembro__index">04</span>
+              </div>
+              <h4 class="miembro__nombre">Integrante de Pánico</h4>
+              <p class="miembro__rol">Arte y estilismo</p>
+            </article>
+          </div>
+        </div>
+
+        <!--
+          TODO: reemplazar el mensaje del CTA por la invitación real que
+          quiera comunicar Pánico (encargos, coproducciones, prensa).
+        -->
+        <div class="nosotros__cta" data-reveal>
+          <p class="nosotros__cta-kicker">¿Coincidimos?</p>
+          <h3 class="nosotros__cta-titulo">Hablemos antes de que aterré a otro.<br />Mejor: hablemos.</h3>
+          <a class="nosotros__cta-link" href="#/contacto">Escribinos</a>
+        </div>
+      </section>
+
+      <section data-page="contacto" id="contacto" class="page pagina" hidden>
+        <header class="pagina__header">
+          <p class="pagina__kicker">03 — Escribinos</p>
+          <h2 class="pagina__titulo">Contacto</h2>
+        </header>
+
+        <!--
+          TODO: conectar este formulario a Formspree o EmailJS con el email
+          real de Pánico. Mientras tanto no envía nada (ver contactForm.js).
+        -->
+        <form class="contacto__form" novalidate>
+          <label class="contacto__campo">
+            <span class="contacto__label">Nombre</span>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </label>
+          <label class="contacto__campo">
+            <span class="contacto__label">Email</span>
+            <input type="email" name="email" placeholder="tu@email.com" required />
+          </label>
+          <label class="contacto__campo">
+            <span class="contacto__label">Mensaje</span>
+            <textarea
+              name="mensaje"
+              rows="6"
+              placeholder="Contanos de tu proyecto…"
+              required
+            ></textarea>
+          </label>
+          <button class="contacto__boton" type="submit">Enviar</button>
+          <p class="contacto__estado" role="status"></p>
+        </form>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
