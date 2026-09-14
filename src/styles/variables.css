@@ -1,8 +1,10 @@
 :root {
   --color-bg: #0a0a0a;
   --color-text: #e8e5e0;
+  --color-muted: #9a9a9a;
   --color-blood: #8a0303;
   --color-blood-bright: #c41e1e;
+  --color-blood-text: #da4040;
   --font-display: 'Poppins', sans-serif;
   --font-body: 'Poppins', sans-serif;
 }

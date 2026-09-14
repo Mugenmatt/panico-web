@@ -12,6 +12,9 @@ export function initLightbox() {
     const caja = document.createElement('div')
     caja.className = 'lightbox'
     caja.dataset.lightbox = ''
+    caja.setAttribute('role', 'dialog')
+    caja.setAttribute('aria-modal', 'true')
+    caja.setAttribute('aria-labelledby', 'lightbox-titulo')
     caja.hidden = true
     caja.innerHTML = `
       <button class="lightbox__cerrar" type="button" aria-label="Cerrar vista">
@@ -21,7 +24,7 @@ export function initLightbox() {
         <div class="lightbox__video-wrap" data-lightbox-video></div>
         <figcaption class="lightbox__info">
           <span class="lightbox__kicker">Pánico presenta</span>
-          <h3 class="lightbox__titulo" data-lightbox-titulo></h3>
+          <h3 class="lightbox__titulo" id="lightbox-titulo" data-lightbox-titulo></h3>
           <p class="lightbox__meta" data-lightbox-meta></p>
           <p class="lightbox__descripcion" data-lightbox-descripcion></p>
         </figcaption>
@@ -151,6 +154,32 @@ export function initLightbox() {
     if (!caja || caja.hidden) return
     if (event.key === 'Escape') cerrar()
   }
+
+  // Trampa de foco: Tab nunca sale del diálogo mientras está abierto.
+  const eventoTab = (event) => {
+    if (!caja || caja.hidden) return
+    if (event.key !== 'Tab') return
+    const elementos = Array.from(
+      caja.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter((el) => el.offsetParent !== null)
+    if (!elementos.length) return
+    const primero = elementos[0]
+    const ultimo = elementos[elementos.length - 1]
+    const indice = elementos.indexOf(document.activeElement)
+    if (event.shiftKey) {
+      if (indice <= 0) {
+        event.preventDefault()
+        ultimo.focus()
+      }
+    } else if (indice === -1 || indice === elementos.length - 1) {
+      event.preventDefault()
+      primero.focus()
+    }
+  }
+
   document.addEventListener('click', eventoClick)
   document.addEventListener('keydown', eventoTecla)
+  document.addEventListener('keydown', eventoTab)
 }

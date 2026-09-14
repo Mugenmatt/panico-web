@@ -33,7 +33,9 @@ export function initRouter() {
     enlaces.forEach((enlace) => {
       const activo = enlace.dataset.route === ruta
       enlace.classList.toggle('nav__link--active', activo)
-      enlace.setAttribute('aria-current', activo ? 'page' : 'false')
+      // aria-current solo existe cuando hay una página actual; se omite si no.
+      enlace.toggleAttribute('aria-current', activo)
+      if (activo) enlace.setAttribute('aria-current', 'page')
     })
 
     // El footer solo aparece fuera de la home: en Inicio la pantalla es el
