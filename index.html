@@ -91,59 +91,18 @@
             <span data-hero-sonido-on hidden>Sin sonido</span>
           </button>
         </div>
+      </section>
+
+      <section data-page="proyectos" id="proyectos" class="proyectos page" hidden>
+        <header class="proyectos__header">
+          <p class="proyectos__kicker">01 — Obra</p>
+          <h2 class="proyectos__titulo">Proyectos</h2>
+        </header>
 
         <!--
-          Manifiesto cinemático: se revela línea por línea mientras se scrollea
-          con el fondo en crossfade (ver manifiesto.js). El texto es provisional;
-          TODO: reemplazar por el manifiesto real de Pánico.
+          Reel/showreel: previa silenciosa; el clic abre el video con sonido.
+          TODO: reemplazar hero-panico.mp4 por el reel final de Pánico.
         -->
-        <section class="manifiesto" id="manifiesto" aria-label="Manifiesto de Pánico">
-          <div class="manifiesto__fondos" aria-hidden="true">
-            <!-- TODO: reemplazar por stills reales de Pánico (reusan placeholders). -->
-            <img
-              class="manifiesto__fondo-img is-activa"
-              data-manifiesto-imagen
-              src="/images/proyecto-manifiesto-miedo.jpg"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="manifiesto__fondo-img"
-              data-manifiesto-imagen
-              src="/images/proyecto-fosa-comun-poster.jpg"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              class="manifiesto__fondo-img"
-              data-manifiesto-imagen
-              src="/images/proyecto-ceibo-podrido.jpg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-
-          <div class="manifiesto__texto">
-            <p class="manifiesto__linea" data-manifiesto-linea>
-              Le tenemos miedo a lo que se ve.
-            </p>
-            <p class="manifiesto__linea" data-manifiesto-linea>
-              Mucho más a lo que no se ve.
-            </p>
-            <p class="manifiesto__linea" data-manifiesto-linea>
-              El miedo es una textura, una luz, un silencio mal puesto.
-            </p>
-            <p class="manifiesto__linea" data-manifiesto-linea>
-              Nosotros lo filmamos.
-            </p>
-            <p class="manifiesto__linea" data-manifiesto-linea>
-              Pánico.
-            </p>
-          </div>
-        </section>
-
-        <!-- Reel/showreel: previa silenciosa; el clic abre el video con sonido.
-            TODO: reemplazar hero-panico.mp4 por el reel final de Pánico. -->
         <section class="reel" id="reel" aria-label="Showreel de Pánico">
           <video
             class="reel__video"
@@ -173,13 +132,6 @@
           </button>
           <span class="reel__duracion" aria-hidden="true">Reel 2026</span>
         </section>
-      </section>
-
-      <section data-page="proyectos" id="proyectos" class="proyectos page" hidden>
-        <header class="proyectos__header">
-          <p class="proyectos__kicker">01 — Obra</p>
-          <h2 class="proyectos__titulo">Proyectos</h2>
-        </header>
 
         <div class="proyectos__grid">
           <!--

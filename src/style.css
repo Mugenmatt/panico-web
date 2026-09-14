@@ -1846,6 +1846,10 @@ body::after {
   border-top: 1px solid color-mix(in srgb, var(--color-blood) 55%, transparent);
 }
 
+.footer[hidden] {
+  display: none;
+}
+
 .footer__marca {
   display: grid;
   gap: 0.9rem;

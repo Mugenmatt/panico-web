@@ -12,6 +12,7 @@ const RUTAS = ['inicio', 'proyectos', 'nosotros', 'contacto']
 export function initRouter() {
   const paginas = document.querySelectorAll('[data-page]')
   const enlaces = document.querySelectorAll('.nav__link[data-route]')
+  const footer = document.querySelector('.footer')
 
   // Lee la ruta del hash. Un hash vacío o desconocido cae en "inicio".
   function rutaActual() {
@@ -34,6 +35,12 @@ export function initRouter() {
       enlace.classList.toggle('nav__link--active', activo)
       enlace.setAttribute('aria-current', activo ? 'page' : 'false')
     })
+
+    // El footer solo aparece fuera de la home: en Inicio la pantalla es el
+    // hero a toda pantalla, sin scroll ni contenido de cierre.
+    if (footer) {
+      footer.hidden = ruta === 'inicio'
+    }
 
     // Avisa al resto de los módulos que cambió la página, para que
     // refresquen sus mediciones (ScrollTrigger, etc.).
