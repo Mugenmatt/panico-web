@@ -1,7 +1,8 @@
 // Preloader de la intro: pantalla negra con el wordmark y un contador de
 // carga 0→100. Avanza con el progreso real de los assets (window load) y se
-// desvanece apenas termina. Con movimiento reducido se muestra y se oculta
-// sin animar.
+// desvanece apenas termina. La intro dura siempre al menos 5 segundos;
+// si el load tarda más, espera a que termine. Con movimiento reducido se
+// muestra y se oculta sin animar.
 export function initPreloader() {
   const preloader = document.querySelector('#preloader')
   if (!preloader) return
@@ -11,10 +12,16 @@ export function initPreloader() {
 
   let valor = 0
   const total = 100
+  const inicio = performance.now()
+  const duracion = 5000
+  let loadCompleto = reduceMotion
 
   function fin() {
+    if (!loadCompleto || (performance.now() - inicio < duracion && !reduceMotion)) return
     document.documentElement.classList.add('is-loaded')
     preloader.classList.add('is-done')
+    // Avisa al resto de los módulos que la intro terminó.
+    window.dispatchEvent(new CustomEvent('preloader:done'))
     // Tras la transición de PNG se desmonta del DOM.
     setTimeout(() => preloader.remove(), reduceMotion ? 0 : 500)
   }
@@ -24,10 +31,6 @@ export function initPreloader() {
     fin()
     return
   }
-
-  // Progreso real: el window load de los assets (videos, imágenes, fuentes).
-  const inicio = performance.now()
-  const duracion = 900
 
   function frame() {
     if (!document.body.contains(preloader)) return
@@ -39,17 +42,17 @@ export function initPreloader() {
     if (valor < total) {
       requestAnimationFrame(frame)
     } else {
-      // Espera el load real como tope; si el load llega antes, se iguala a 100.
+      // El contador llegó a 100; falta el load real para cerrar.
       fin()
     }
   }
-  requestAnimationFrame(frame)
 
   window.addEventListener('load', () => {
-    if (valor < total) {
-      valor = total
-      if (contador) contador.textContent = String(total).padStart(3, '0')
-      requestAnimationFrame(fin)
-    }
+    loadCompleto = true
+    valor = total
+    if (contador) contador.textContent = String(total).padStart(3, '0')
+    fin()
   })
+
+  requestAnimationFrame(frame)
 }
