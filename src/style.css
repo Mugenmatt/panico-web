@@ -1487,6 +1487,7 @@ body::after {
   overflow: hidden;
   background: var(--color-bg);
   border-top: 1px solid color-mix(in srgb, var(--color-blood) 45%, transparent);
+  margin-bottom: clamp(5rem, 10vw, 8rem);
 }
 
 .reel__video {
