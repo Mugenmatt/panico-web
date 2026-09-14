@@ -971,7 +971,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100svh;
-  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+  /* El padding superior es el mismo que en proyectos/nosotros para que la
+     línea del header quede por debajo del logo 3D (arriba al centro). */
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem);
 }
 
 .contacto.pagina .pagina__header {
@@ -1237,6 +1239,34 @@ body {
   font-weight: 600;
   letter-spacing: 0.35em;
   color: var(--color-blood-text);
+}
+
+/* ============================================================
+   Logo 3D del header (arriba al centro, solo fuera de la home).
+   No está fijo: vive en el flujo de la página y scrollea con ella.
+   ============================================================ */
+
+.logo3d {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.logo3d.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.logo3d__canvas {
+  display: block;
+  width: min(230px, 38vw);
+  height: auto;
+  aspect-ratio: 2 / 1;
 }
 
 /* ============================================================
@@ -1872,6 +1902,10 @@ body::after {
 
   .grain {
     display: none;
+  }
+
+  .logo3d {
+    display: none !important;
   }
 
   .hero__letterbox,
