@@ -1132,21 +1132,30 @@
         <div class="contacto__grid">
           <form class="contacto__form" novalidate>
             <label class="contacto__campo">
-              <span class="contacto__label">Nombre</span>
-              <input type="text" name="nombre" placeholder="Tu nombre" required />
+              <span class="contacto__label">
+                Nombre<span class="contacto__req" aria-hidden="true">*</span>
+              </span>
+              <input type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+              <p class="contacto__error" id="error-nombre" hidden></p>
             </label>
             <label class="contacto__campo">
-              <span class="contacto__label">Email</span>
-              <input type="email" name="email" placeholder="tu@email.com" required />
+              <span class="contacto__label">
+                Email<span class="contacto__req" aria-hidden="true">*</span>
+              </span>
+              <input type="email" name="email" placeholder="tu@email.com" required autocomplete="email" />
+              <p class="contacto__error" id="error-email" hidden></p>
             </label>
             <label class="contacto__campo">
-              <span class="contacto__label">Mensaje</span>
+              <span class="contacto__label">
+                Mensaje<span class="contacto__req" aria-hidden="true">*</span>
+              </span>
               <textarea
                 name="mensaje"
                 rows="6"
                 placeholder="Contanos de tu proyecto…"
                 required
               ></textarea>
+              <p class="contacto__error" id="error-mensaje" hidden></p>
             </label>
             <button class="contacto__boton" type="submit">Enviar</button>
             <p class="contacto__estado" role="status"></p>

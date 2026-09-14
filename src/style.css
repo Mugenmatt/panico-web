@@ -1126,6 +1126,25 @@ body {
   color: var(--color-blood-text);
 }
 
+/* Marcador de campo requerido y mensajes de error (JS, contacto-form.js). */
+.contacto__req {
+  color: var(--color-blood-text);
+  margin-left: 0.25em;
+}
+
+.contacto__error {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--color-blood-text);
+}
+
+.contacto__campo.is-invalid input,
+.contacto__campo.is-invalid textarea {
+  border-color: var(--color-blood-text);
+  box-shadow: 0 0 0 1px var(--color-blood-text);
+}
+
 /* ---- Movimiento reducido ---- */
 
 @media (prefers-reduced-motion: reduce) {
