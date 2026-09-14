@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-14T00:00:00Z",
+  "title": "Design System: Pánico — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "cinema-black": {
+        "role": "neutral",
+        "displayName": "Cinema Black",
+        "canonical": "oklch(0.157 0.002 0)",
+        "tonalRamp": [
+          "oklch(0.15 0.002 0)",
+          "oklch(0.24 0.002 0)",
+          "oklch(0.34 0.002 0)",
+          "oklch(0.44 0.002 0)",
+          "oklch(0.54 0.002 0)",
+          "oklch(0.64 0.002 0)",
+          "oklch(0.76 0.002 0)",
+          "oklch(0.9 0.002 0)"
+        ]
+      },
+      "celluloid-cream": {
+        "role": "neutral",
+        "displayName": "Celluloid Cream",
+        "canonical": "oklch(0.912 0.014 88)",
+        "tonalRamp": [
+          "oklch(0.15 0.014 88)",
+          "oklch(0.26 0.014 88)",
+          "oklch(0.38 0.014 88)",
+          "oklch(0.5 0.014 88)",
+          "oklch(0.62 0.014 88)",
+          "oklch(0.74 0.014 88)",
+          "oklch(0.84 0.014 88)",
+          "oklch(0.93 0.012 88)"
+        ]
+      },
+      "muted-graphite": {
+        "role": "neutral",
+        "displayName": "Muted Graphite",
+        "canonical": "oklch(0.665 0.001 0)",
+        "tonalRamp": [
+          "oklch(0.15 0.001 0)",
+          "oklch(0.26 0.001 0)",
+          "oklch(0.38 0.001 0)",
+          "oklch(0.5 0.001 0)",
+          "oklch(0.62 0.001 0)",
+          "oklch(0.72 0.001 0)",
+          "oklch(0.82 0.001 0)",
+          "oklch(0.92 0.001 0)"
+        ]
+      },
+      "dried-blood": {
+        "role": "secondary",
+        "displayName": "Dried Blood",
+        "canonical": "oklch(0.35 0.14 27)",
+        "tonalRamp": [
+          "oklch(0.15 0.14 27)",
+          "oklch(0.24 0.14 27)",
+          "oklch(0.33 0.14 27)",
+          "oklch(0.42 0.14 27)",
+          "oklch(0.51 0.14 27)",
+          "oklch(0.61 0.12 27)",
+          "oklch(0.72 0.09 27)",
+          "oklch(0.84 0.06 27)"
+        ]
+      },
+      "arterial-red": {
+        "role": "primary",
+        "displayName": "Arterial Red",
+        "canonical": "oklch(0.565 0.22 29)",
+        "tonalRamp": [
+          "oklch(0.15 0.22 29)",
+          "oklch(0.25 0.22 29)",
+          "oklch(0.35 0.22 29)",
+          "oklch(0.45 0.22 29)",
+          "oklch(0.55 0.22 29)",
+          "oklch(0.65 0.18 29)",
+          "oklch(0.76 0.12 29)",
+          "oklch(0.88 0.06 29)"
+        ]
+      },
+      "arterial-flash": {
+        "role": "primary",
+        "displayName": "Arterial Flash",
+        "canonical": "oklch(0.62 0.16 24)",
+        "tonalRamp": [
+          "oklch(0.15 0.16 24)",
+          "oklch(0.25 0.16 24)",
+          "oklch(0.35 0.16 24)",
+          "oklch(0.45 0.16 24)",
+          "oklch(0.55 0.16 24)",
+          "oklch(0.65 0.13 24)",
+          "oklch(0.76 0.09 24)",
+          "oklch(0.88 0.05 24)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Títulos de sección y marca del preloader; mayúsculas, peso 800, tracking 0.02em."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Leads y manifiesto cinemático; mayúsculas, peso 800."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombres de proyectos, obras y miembros; mayúsculas, peso 600."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto institucional y descripciones; máx. 52-56ch, opacidad 0.7-0.75."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Kickers, badges, meta y labels de formulario; mayúsculas, tracking 0.3-0.4em."
+      },
+      "micro": { "displayName": "Micro", "purpose": "Badge de tarjeta (0.6rem)." },
+      "nano": { "displayName": "Nano", "purpose": "Índices y kickers del lightbox (0.65rem)." },
+      "hairline-text": { "displayName": "Hairline Text", "purpose": "Labels de datos y duración (0.68rem)." },
+      "fine": { "displayName": "Fine", "purpose": "Meta de tarjeta y lightbox (0.72rem)." },
+      "kicker": { "displayName": "Kicker", "purpose": "Kickers y enlaces-CTA (0.75rem)." },
+      "meta": { "displayName": "Meta", "purpose": "Labels de formulario y errores (0.78rem)." },
+      "xmeta": { "displayName": "X-Meta", "purpose": "Mensajes de estado de formulario (0.8rem)." },
+      "caption": { "displayName": "Caption", "purpose": "Contador del preloader y enlaces del footer (0.85rem)." },
+      "sub": { "displayName": "Sub", "purpose": "Taglines (0.9rem)." },
+      "body-fine": { "displayName": "Body Fine", "purpose": "Descripciones cortas (0.92rem)." },
+      "body-small": { "displayName": "Body Small", "purpose": "Descripciones de obra (0.95rem)." },
+      "field": { "displayName": "Field", "purpose": "Texto de inputs del formulario (1.05rem)." },
+      "stat": { "displayName": "Stat", "purpose": "Icono del acordeón (1.35rem)." }
+    },
+    "shadows": [
+      {
+        "name": "overlay-text",
+        "value": "0 2px 14px rgb(0 0 0 / 0.85)",
+        "purpose": "Única sombra del sistema; legibilidad bajo capas oscuras de títulos sobre imagen (hover de tarjeta, líneas del manifiesto). No es elevación."
+      }
+    ],
+    "motion": [
+      { "name": "ease-power-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Reveals al scroll, zoom cinematográfico de medios, acordeón y barras letterbox del hero." },
+      { "name": "ease-draw", "value": "cubic-bezier(0.33, 0, 0.2, 1)", "purpose": "Subrayado que se dibuja bajo títulos de tarjeta." },
+      { "name": "ease-standard", "value": "ease", "purpose": "Fades de opacidad y colores de estado (0.3-0.8s)." },
+      { "name": "duration-micro", "value": "0.3s", "purpose": "Hovers de enlaces, botones, inputs." },
+      { "name": "duration-body", "value": "0.6s", "purpose": "Crossfades de tarjeta (still/preview video)." },
+      { "name": "duration-reveal", "value": "0.7s", "purpose": "Revelado de bloques al entrar en pantalla." },
+      { "name": "duration-zoom", "value": "1.2s", "purpose": "Zoom lento del still/hover al entrar con puntero." },
+      { "name": "duration-accordion", "value": "0.55s", "purpose": "Despliegue de paneles del acordeón." },
+      { "name": "duration-preloader-bar", "value": "1.6s", "purpose": "Progreso del preloader (ease-out)." },
+      { "name": "duration-marquee", "value": "26s", "purpose": "Ticker de bandas (linear infinite)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "720px" },
+      { "name": "lg", "value": "900px" },
+      { "name": "xl", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Outline Action Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "La voz de acción del sistema: outline angular sin relleno en reposo, que al hover tira a sangre.",
+      "html": "<button class=\"ds-btn-outline\">Ver reel con sonido</button>",
+      "css": ".ds-btn-outline { font-family: var(--font-display, Poppins, sans-serif); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text, #e8e5e0); background: transparent; border: 1px solid var(--color-blood, #8a0303); border-radius: 0; padding: 1rem 2.25rem; cursor: pointer; transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { color: var(--color-text, #e8e5e0); border-color: var(--color-blood-bright, #c41e1e); background: color-mix(in srgb, var(--color-blood, #8a0303) 22%, transparent); } .ds-btn-outline:active { background: color-mix(in srgb, var(--color-blood, #8a0303) 40%, transparent); }"
+    },
+    {
+      "name": "Ghost Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Enlace de la nav superior fija: grafito en reposo, sangre con subrayado al hover o activo.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link is-active\" href=\"#\">Proyectos</a><a class=\"ds-nav-link\" href=\"#\">Nosotros</a><a class=\"ds-nav-link\" href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; } .ds-nav-link { font-family: var(--font-display, Poppins, sans-serif); font-size: 1rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; color: #9a9a9a; transition: color 0.3s ease; } .ds-nav-link:hover, .ds-nav-link.is-active { color: var(--color-blood-text, #da4040); text-decoration: underline; text-underline-offset: 6px; }"
+    },
+    {
+      "name": "Hairline Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Campo angular con fondo tinta y hairline; el foco enciende un anillo arterial.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Tu email</span><input class=\"ds-field-input\" type=\"email\" placeholder=\"hola@panico.agency\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.75rem; } .ds-field-label { font-family: var(--font-display, Poppins, sans-serif); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text, #e8e5e0); opacity: 0.55; } .ds-field-input { font-family: var(--font-body, Poppins, sans-serif); font-size: 1.05rem; color: var(--color-text, #e8e5e0); background: color-mix(in srgb, var(--color-text, #e8e5e0) 4%, var(--color-bg, #0a0a0a)); border: 1px solid color-mix(in srgb, var(--color-text, #e8e5e0) 18%, transparent); border-radius: 0; padding: 1.05rem 1.2rem; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; } .ds-field-input:focus { border-color: var(--color-blood-bright, #c41e1e); box-shadow: 0 0 0 1px var(--color-blood-bright, #c41e1e); } .ds-field-input::placeholder { color: var(--color-text, #e8e5e0); opacity: 0.4; }"
+    },
+    {
+      "name": "Project Badge",
+      "kind": "chip",
+      "refersTo": "card-media",
+      "description": "Etiqueta de tarjeta: recuadro oscuro con blur que se enciende en sangre al hover.",
+      "html": "<span class=\"ds-badge\">Largometraje</span>",
+      "css": ".ds-badge { display: inline-block; padding: 0.4rem 0.6rem; font-family: var(--font-display, Poppins, sans-serif); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text, #e8e5e0); background: color-mix(in srgb, var(--color-bg, #0a0a0a) 72%, transparent); outline: 1px solid color-mix(in srgb, var(--color-text, #e8e5e0) 25%, transparent); backdrop-filter: blur(4px); transition: color 0.4s ease, outline-color 0.4s ease; } .ds-badge:hover { color: var(--color-blood-text, #da4040); outline-color: var(--color-blood, #8a0303); }"
+    },
+    {
+      "name": "Accordion Format Row",
+      "kind": "custom",
+      "refersTo": "card-media",
+      "description": "Fila del acordeón de formatos: hairline, número de índice y nombre mayúsculas que tiran a sangre.",
+      "html": "<button class=\"ds-acc-trigger\" aria-expanded=\"true\"><span class=\"ds-acc-index\">01</span><span class=\"ds-acc-name\">Largometrajes</span><span class=\"ds-acc-icon\">+</span></button>",
+      "css": ".ds-acc-trigger { width: 100%; display: grid; grid-template-columns: minmax(2.5rem, auto) 1fr auto; align-items: baseline; gap: 1.25rem; padding: 1.35rem 0; font: inherit; text-align: left; color: inherit; background: none; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--color-text, #e8e5e0) 12%, transparent); cursor: pointer; transition: border-color 0.4s ease; } .ds-acc-index { font-family: var(--font-display, Poppins, sans-serif); font-size: 0.7rem; letter-spacing: 0.25em; color: var(--color-text, #e8e5e0); opacity: 0.5; } .ds-acc-name { font-family: var(--font-display, Poppins, sans-serif); font-size: clamp(1.05rem, 2.4vw, 1.6rem); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text, #e8e5e0); transition: color 0.4s ease; } .ds-acc-icon { font-family: var(--font-display, Poppins, sans-serif); font-size: 1.35rem; font-weight: 600; line-height: 1; color: var(--color-blood-bright, #c41e1e); transform: rotate(135deg); } .ds-acc-trigger:hover { border-color: color-mix(in srgb, var(--color-blood, #8a0303) 60%, transparent); } .ds-acc-trigger:hover .ds-acc-name { color: var(--color-blood-bright, #c41e1e); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-media",
+      "description": "Tarjeta de portfolio: marco hairline, índice y badge; el título se subraya de sangre al hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-media\"><span class=\"ds-card-index\">01</span><span class=\"ds-card-badge\">Largometraje</span></div><h3 class=\"ds-card-title\">La casa de los huesos</h3><p class=\"ds-card-meta\"><span>Largometraje</span><span>2025</span><span>Dir. M. Herrera</span></p></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 0.9rem; } .ds-card-media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: linear-gradient(160deg, #1a1a1a 0%, var(--color-bg, #0a0a0a) 55%, #1d0a0a 100%); outline: 1px solid color-mix(in srgb, var(--color-text, #e8e5e0) 12%, transparent); outline-offset: -1px; } .ds-card-index { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-display, Poppins, sans-serif); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--color-text, #e8e5e0); opacity: 0.5; } .ds-card-badge { position: absolute; right: 1rem; bottom: 1rem; padding: 0.4rem 0.6rem; font-family: var(--font-display, Poppins, sans-serif); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text, #e8e5e0); background: color-mix(in srgb, var(--color-bg, #0a0a0a) 72%, transparent); outline: 1px solid color-mix(in srgb, var(--color-text, #e8e5e0) 25%, transparent); backdrop-filter: blur(4px); transition: color 0.4s ease, outline-color 0.4s ease; } .ds-card-title { position: relative; width: fit-content; margin: 0; padding-bottom: 0.5rem; font-family: var(--font-display, Poppins, sans-serif); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text, #e8e5e0); } .ds-card-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: var(--color-blood-bright, #c41e1e); transform: scaleX(0); transform-origin: left; transition: transform 0.6s cubic-bezier(0.33, 0, 0.2, 1); } .ds-card:hover .ds-card-title::after { transform: scaleX(1); } .ds-card-meta { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text, #e8e5e0); opacity: 0.5; transition: opacity 0.6s ease; } .ds-card:hover .ds-card-meta { opacity: 1; } .ds-card:hover .ds-card-meta span:last-child { color: var(--color-blood-bright, #c41e1e); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Darkroom",
+    "overview": "El sitio es un cuarto oscuro: el material entra en bruto y sale procesado, graneado y con la sangre bien revelada. Todo el sistema trabaja para que el trabajo audiovisual sea la única luz — HTML oscuro, tipografía densa y mayúsculas editoriales, y un rojo que corta el monocromo solo donde importa. La interfaz recede; la obra manda.\n\nCinematic restraint. Oscuro, deliberado, sin concesiones. Cada elemento es de borde filoso, con grano de película en toda la pantalla y una viñeta que aprieta los bordes del viewport, como si se mirara por un visor. La densidad es alta en titulares y etiquetas (mayúsculas, espaciado de letras amplio) y baja en superficies (nada de sombras, nada de radios, nada de rellenos decorativos). El rojo sangre nunca pinta áreas grandes: aparece en primeras letras, hairlines, hovers y líneas de acento — un acento que se gana su lugar.",
+    "keyCharacteristics": [
+      "Esquinas y formas 100% rectas (radio 0) — la geometría es un marco de trabajo.",
+      "Monocromo tinta + sangre: Cinema Black, Celluloid Cream y dos rojos hermanos.",
+      "Textura de película global: grano difuso (opacidad 0.55) + viñeta radial negra.",
+      "Tipografía única (Poppins) donde el peso, el tracking y las mayúsculas hacen toda la jerarquía.",
+      "Profundidad sin sombras: hairline borders, capas tonales por color-mix(), blur y recuadros internos.",
+      "El rojo aparece en primeras letras, foco, hover y líneas que se dibujan solas."
+    ],
+    "rules": [
+      { "name": "The Blood Rarity Rule", "body": "El rojo nunca llena una superficie. Aparece solo como hairlines, marcas tipográficas y estados de hover/foco; si un componente tiene más de un rojo visible en reposo, sobran. Su rareza es el punto.", "section": "colors" },
+      { "name": "The Weight-Is-Voice Rule", "body": "No se añade una segunda familia para \"dar personalidad\". La jerarquía se resuelve con peso (600/700/800), tamaño clamp y tracking; si algo necesita serruchar más fuerte, se sube el peso, no se cambia la tipografía.", "section": "typography" },
+      { "name": "The No-Elevation Rule", "body": "Si un estado necesita profundidad, se consigue con una línea (hairline), una capa tonal o blur — nunca con una sombra de caída flotando. El mundo es luz proyectada, no objetos apilados.", "section": "elevation" },
+      { "name": "The Sharp-Edged Rule", "body": "Nada de radios ni redondeos funcionales. Un redondeo de más y el sistema pasa de \"cine de terror serio\" a \"app amigable\"; el borde filoso es la barrera que mantiene el tono.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do mantener todo angular: radio 0 por sistema; el borde filoso conserva el tono de cine de terror.",
+      "Do reservar el rojo para hairlines, marcas y hovers — una superficie sangrada a lo sumo en el hover de un botón outline.",
+      "Do usar los tokens de src/styles/variables.css (--color-bg, --color-text, --color-blood, --color-blood-bright) y nunca hardcodear #0a0a0a, #e8e5e0, #8a0303 ni #c41e1e.",
+      "Do construir jerarquía con peso y tracking de Poppins en mayúsculas: kickers 0.7rem + tracking 0.35em, titulares 800 + tracking 0.02em.",
+      "Do conseguir la profundidad con hairlines, color-mix() y blur(), no con sombras de caída.",
+      "Do enmarcar los medios con recuadros de hairline (outline-offset: -1px) y respetar los aspect-ratio de la retícula.",
+      "Do respetar prefers-reduced-motion (el sistema ya lo hace en todas las piezas: transiciones, marquee, preloader, cursor, reveal)."
+    ],
+    "donts": [
+      "Don't usar esquinas redondeadas en componentes funcionales; el radio 0 es una invariante del sistema.",
+      "Don't pintar fondos grandes con rojo sangre; el Rojo es acento, no superficie.",
+      "Don't añadir una segunda familia tipográfica de contraste — el peso y el tracking de Poppins ya sostienen la jerarquía.",
+      "Don't elevar elementos con box-shadows flotantes; usa capas tonales y hairlines.",
+      "Don't caer en clichés de Halloween (calabazas, murciélagos, gore comic) — el referente es el cine de terror serio.",
+      "Don't tratar los placeholders de contenido (obras, descripciones, stats, equipo) como material final de Pánico mientras los assets reales no existan."
+    ]
+  }
+}
