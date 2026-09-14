@@ -5,6 +5,8 @@
 //   #/nosotros   → nosotros
 //   #/contacto   → contacto
 // Solo la página activa está visible; al navegar se vuelve arriba del scroll.
+// Dispara 'routechange' para que otros módulos (manifiesto, etc.) recalibren
+// sus mediciones cuando cambia la visibilidad de sus secciones.
 const RUTAS = ['inicio', 'proyectos', 'nosotros', 'contacto']
 
 export function initRouter() {
@@ -32,6 +34,10 @@ export function initRouter() {
       enlace.classList.toggle('nav__link--active', activo)
       enlace.setAttribute('aria-current', activo ? 'page' : 'false')
     })
+
+    // Avisa al resto de los módulos que cambió la página, para que
+    // refresquen sus mediciones (ScrollTrigger, etc.).
+    window.dispatchEvent(new CustomEvent('routechange'))
 
     // Cada página parte desde el inicio del scroll. Si Lenis está activo,
     // se sincroniza con él para no pelear contra la animación en curso.

@@ -53,6 +53,14 @@ export function initProjects() {
             visible = entry.isIntersecting
             if (!visible) stop()
             else tryPlay()
+            // Prefetch: en cuanto la tarjeta se acerca, se baja el video
+            // entero para que el preview al hover sea instantáneo.
+            if (entry.isIntersecting) {
+              if (video.preload !== 'auto') {
+                video.preload = 'auto'
+                video.load()
+              }
+            }
           })
         },
         { threshold: 0.15 },

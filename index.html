@@ -12,6 +12,15 @@
     />
   </head>
   <body>
+    <div class="preloader" id="preloader" role="status" aria-label="Cargando Pánico">
+      <span class="preloader__kicker">Pánico presenta</span>
+      <span class="preloader__marca">PÁNICO</span>
+      <div class="preloader__barra">
+        <span class="preloader__barra-vivo" aria-hidden="true"></span>
+      </div>
+      <span class="preloader__numero" data-preloader-numero>000</span>
+    </div>
+
     <nav class="nav" aria-label="Navegación principal">
       <ul class="nav__lista">
         <li><a class="nav__link" href="#/" data-route="inicio">Inicio</a></li>
@@ -21,51 +30,149 @@
       </ul>
     </nav>
     <main>
-      <section data-page="inicio" id="inicio" class="hero page" hidden>
-        <video
-          class="hero__video"
-          muted
-          loop
-          playsinline
-          autoplay
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source src="/video/hero-panico.mp4" type="video/mp4" />
-        </video>
-
-        <h1 class="hero__titulo">
-          <svg
-            viewBox="0 0 1000 280"
-            preserveAspectRatio="xMidYMid meet"
+      <section data-page="inicio" id="inicio" class="page" hidden>
+        <div class="hero">
+          <video
+            class="hero__video"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="auto"
             aria-hidden="true"
-            focusable="false"
           >
-            <defs>
-              <mask
-                id="hero-mask"
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="-20"
-                width="1000"
-                height="320"
-              >
-                <rect x="0" y="-20" width="1000" height="320" fill="white" />
-                <text
-                  x="500"
-                  y="140"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  fill="black"
+            <source src="/video/hero-panico.mp4" type="video/mp4" />
+          </video>
+
+          <!-- Letterbox cinematográfico: barras que se cierran al hacer scroll. -->
+          <div class="hero__letterbox hero__letterbox--top" aria-hidden="true"></div>
+          <div class="hero__letterbox hero__letterbox--bottom" aria-hidden="true"></div>
+
+          <h1 class="hero__titulo">
+            <svg
+              viewBox="0 0 1000 280"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <mask
+                  id="hero-mask"
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="-20"
+                  width="1000"
+                  height="320"
                 >
-                  PÁNICO
-                </text>
-              </mask>
-            </defs>
-            <rect x="0" y="-20" width="1000" height="320" fill="currentColor" mask="url(#hero-mask)" />
-          </svg>
-          <span class="sr-only">Pánico</span>
-        </h1>
+                  <rect x="0" y="-20" width="1000" height="320" fill="white" />
+                  <text
+                    x="500"
+                    y="140"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    fill="black"
+                  >
+                    PÁNICO
+                  </text>
+                </mask>
+              </defs>
+              <rect x="0" y="-20" width="1000" height="320" fill="currentColor" mask="url(#hero-mask)" />
+            </svg>
+            <span class="sr-only">Pánico</span>
+          </h1>
+
+          <button
+            class="hero__sonido"
+            type="button"
+            aria-pressed="false"
+            aria-label="Escuchar video con sonido"
+          >
+            <span data-hero-sonido-off>Sonido</span>
+            <span data-hero-sonido-on hidden>Sin sonido</span>
+          </button>
+        </div>
+
+        <!--
+          Manifiesto cinemático: se revela línea por línea mientras se scrollea
+          con el fondo en crossfade (ver manifiesto.js). El texto es provisional;
+          TODO: reemplazar por el manifiesto real de Pánico.
+        -->
+        <section class="manifiesto" id="manifiesto" aria-label="Manifiesto de Pánico">
+          <div class="manifiesto__fondos" aria-hidden="true">
+            <!-- TODO: reemplazar por stills reales de Pánico (reusan placeholders). -->
+            <img
+              class="manifiesto__fondo-img is-activa"
+              data-manifiesto-imagen
+              src="/images/proyecto-manifiesto-miedo.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              class="manifiesto__fondo-img"
+              data-manifiesto-imagen
+              src="/images/proyecto-fosa-comun-poster.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              class="manifiesto__fondo-img"
+              data-manifiesto-imagen
+              src="/images/proyecto-ceibo-podrido.jpg"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+
+          <div class="manifiesto__texto">
+            <p class="manifiesto__linea" data-manifiesto-linea>
+              Le tenemos miedo a lo que se ve.
+            </p>
+            <p class="manifiesto__linea" data-manifiesto-linea>
+              Mucho más a lo que no se ve.
+            </p>
+            <p class="manifiesto__linea" data-manifiesto-linea>
+              El miedo es una textura, una luz, un silencio mal puesto.
+            </p>
+            <p class="manifiesto__linea" data-manifiesto-linea>
+              Nosotros lo filmamos.
+            </p>
+            <p class="manifiesto__linea" data-manifiesto-linea>
+              Pánico.
+            </p>
+          </div>
+        </section>
+
+        <!-- Reel/showreel: previa silenciosa; el clic abre el video con sonido.
+            TODO: reemplazar hero-panico.mp4 por el reel final de Pánico. -->
+        <section class="reel" id="reel" aria-label="Showreel de Pánico">
+          <video
+            class="reel__video"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source src="/video/hero-panico.mp4" type="video/mp4" />
+          </video>
+          <header class="reel__header">
+            <p class="reel__kicker">Lo último</p>
+            <h2 class="reel__titulo">Showreel</h2>
+          </header>
+          <button
+            class="reel__play"
+            type="button"
+            data-reel-play
+            data-reel-src="/video/hero-panico.mp4"
+            data-reel-titulo="Showreel — Pánico"
+            data-reel-meta="Reel 2026 · Todos los formatos"
+            data-reel-descripcion="Una idea, un caño de luz y el miedo bien tratado."
+          >
+            Ver reel con sonido
+          </button>
+          <span class="reel__duracion" aria-hidden="true">Reel 2026</span>
+        </section>
       </section>
 
       <section data-page="proyectos" id="proyectos" class="proyectos page" hidden>
@@ -87,7 +194,7 @@
               cada tarjeta (vertical u horizontal).
           -->
 
-          <article class="proyecto-card card-featured" tabindex="0" aria-label="Proyecto: La casa de los huesos">
+          <article class="proyecto-card card-featured" tabindex="0" aria-label="Proyecto: La casa de los huesos" data-descripcion="Un escribano hereda una casa de campo y descubre que las paredes fueron construidas con las sobras de sus inquilinos.">
             <div class="proyecto-card__media">
               <!-- TODO: reemplazar por asset final de Pánico -->
               <video
@@ -129,7 +236,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: El canto del fiambre">
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: El canto del fiambre" data-descripcion="Videoclip de Punta Seca: una carnicería de pueblo escribe su propio precio en cada corte.">
             <div class="proyecto-card__media">
               <!-- TODO: reemplazar por asset final de Pánico -->
               <video
@@ -171,7 +278,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Señales del subsuelo">
+          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Señales del subsuelo" data-descripcion="Registro en 16mm del abandono: panaderías, salas de cine y hospitales que el tiempo devuelve a la tierra.">
             <div class="proyecto-card__media">
               <img
                 class="proyecto-card__still"
@@ -202,7 +309,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Necrópolis">
+          <article class="proyecto-card card-horizontal" tabindex="0" aria-label="Proyecto: Necrópolis" data-descripcion="Un recolector de miel hace su ronda anual entre las tumbas y descubre que ninguna está más seca que la otra.">
             <div class="proyecto-card__media">
               <!-- TODO: reemplazar por asset final de Pánico -->
               <video
@@ -244,7 +351,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: La niña del tape">
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: La niña del tape" data-descripcion="Una vieja cinta VHS copia el miedo de quien la mira y se convierte en la pesadilla de cada noche.">
             <div class="proyecto-card__media">
               <img
                 class="proyecto-card__still"
@@ -275,7 +382,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Fosa común">
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Fosa común" data-descripcion="Un clip rockero con una excavación que no encuentra lo que estaba buscando.">
             <div class="proyecto-card__media">
               <!-- TODO: reemplazar por asset final de Pánico -->
               <video
@@ -317,7 +424,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Ceibo podrido">
+          <article class="proyecto-card card-vertical" tabindex="0" aria-label="Proyecto: Ceibo podrido" data-descripcion="Serie de stills sobre la humedad del litoral; la flor roja es la única que no envejece.">
             <div class="proyecto-card__media">
               <img
                 class="proyecto-card__still"
@@ -348,7 +455,7 @@
             </div>
           </article>
 
-          <article class="proyecto-card card-widescreen" tabindex="0" aria-label="Proyecto: Manifiesto del miedo">
+          <article class="proyecto-card card-widescreen" tabindex="0" aria-label="Proyecto: Manifiesto del miedo" data-descripcion="Videomanifiesto fundacional de Pánico: instrucciones para mirar lo que no tiene nombre.">
             <div class="proyecto-card__media">
               <img
                 class="proyecto-card__still"
@@ -986,6 +1093,25 @@
         </div>
 
         <!--
+          TODO: reemplazar por la lista real de bandas y artistas que trabajan
+          con Pánico. La fila duplica los nombres para que el loop sea continuo.
+        -->
+        <div class="bandas" aria-label="Bandas y artistas que confiaron en Pánico" data-reveal>
+          <div class="bandas__pista">
+            <div class="bandas__set" aria-hidden="true">
+              <span>Punta Seca</span><span>Los Amotinados</span><span>Himno de Mierda</span>
+              <span>Ruido de Ánimas</span><span>Trombas</span><span>El Vago de la Fábrica</span>
+              <span>Serpiente Roja</span><span>Cementerio de Semáforos</span>
+            </div>
+            <div class="bandas__set" aria-hidden="true">
+              <span>Punta Seca</span><span>Los Amotinados</span><span>Himno de Mierda</span>
+              <span>Ruido de Ánimas</span><span>Trombas</span><span>El Vago de la Fábrica</span>
+              <span>Serpiente Roja</span><span>Cementerio de Semáforos</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
           TODO: reemplazar el equipo por los integrantes reales de Pánico.
           Para cada miembro: nombre, rol y foto (assets en public/images/).
         -->
@@ -1093,8 +1219,60 @@
             <figcaption class="contacto__media-label">Showreel — 2026</figcaption>
           </figure>
         </div>
+
+        <!--
+          Datos de contacto directos (además del formulario).
+          TODO: reemplazar por el email y redes reales de Pánico.
+        -->
+        <div class="contacto__datos">
+          <div class="contacto__dato">
+            <span class="contacto__dato-label">Email</span>
+            <a class="contacto__dato-valor" href="mailto:hola@panico.agency">
+              hola@panico.agency
+            </a>
+          </div>
+          <div class="contacto__dato">
+            <span class="contacto__dato-label">Redes</span>
+            <p class="contacto__dato-valor">
+              <a href="#/contacto">Instagram</a>
+              <a href="#/contacto">Vimeo</a>
+              <a href="#/contacto">TikTok</a>
+            </p>
+          </div>
+          <div class="contacto__dato">
+            <span class="contacto__dato-label">Respuesta</span>
+            <p class="contacto__dato-valor">En un plazo de 48 horas.</p>
+          </div>
+        </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__marca">
+        <span class="footer__wordmark" aria-hidden="true">PÁNICO</span>
+        <p class="footer__tagline">
+          Productora audiovisual de terror y videos musicales.
+        </p>
+      </div>
+      <nav class="footer__col" aria-label="Mapa del sitio">
+        <h3 class="footer__titulo">Sitio</h3>
+        <ul class="footer__lista">
+          <li><a class="footer__link" href="#/">Inicio</a></li>
+          <li><a class="footer__link" href="#/proyectos">Proyectos</a></li>
+          <li><a class="footer__link" href="#/nosotros">Nosotros</a></li>
+          <li><a class="footer__link" href="#/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <h3 class="footer__titulo">Contacto</h3>
+        <ul class="footer__lista">
+          <li><a class="footer__link" href="mailto:hola@panico.agency">hola@panico.agency</a></li>
+        </ul>
+      </div>
+      <p class="footer__legal">
+        © 2026 Pánico. El miedo no tiene copyright, pero el arte sí.
+      </p>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>
