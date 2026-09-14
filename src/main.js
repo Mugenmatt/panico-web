@@ -10,7 +10,6 @@ import { initPreloader } from './modules/preloader.js'
 import { initCursor } from './modules/cursor.js'
 import { initGrain } from './modules/grain.js'
 import { initLightbox } from './modules/lightbox.js'
-import { initManifiesto } from './modules/manifiesto.js'
 
 initSmoothScroll()
 initPreloader()
@@ -20,7 +19,6 @@ initGrain()
 initHeroVideo()
 initProjects()
 initLightbox()
-initManifiesto()
 initContactForm()
 initReveal()
 initAccordion()

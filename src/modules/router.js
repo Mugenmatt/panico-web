@@ -5,7 +5,7 @@
 //   #/nosotros   → nosotros
 //   #/contacto   → contacto
 // Solo la página activa está visible; al navegar se vuelve arriba del scroll.
-// Dispara 'routechange' para que otros módulos (manifiesto, etc.) recalibren
+// Dispara 'routechange' para que otros módulos recalibren
 // sus mediciones cuando cambia la visibilidad de sus secciones.
 const RUTAS = ['inicio', 'proyectos', 'nosotros', 'contacto']
 
