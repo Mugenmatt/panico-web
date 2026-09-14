@@ -16,7 +16,7 @@ export function initPreloader() {
     document.documentElement.classList.add('is-loaded')
     preloader.classList.add('is-done')
     // Tras la transición de PNG se desmonta del DOM.
-    setTimeout(() => preloader.remove(), reduceMotion ? 0 : 700)
+    setTimeout(() => preloader.remove(), reduceMotion ? 0 : 500)
   }
 
   // Sin JS avanzado (o con menos movimiento) se muestra un instante y se va.
@@ -27,7 +27,7 @@ export function initPreloader() {
 
   // Progreso real: el window load de los assets (videos, imágenes, fuentes).
   const inicio = performance.now()
-  const duracion = 1600
+  const duracion = 900
 
   function frame() {
     if (!document.body.contains(preloader)) return
