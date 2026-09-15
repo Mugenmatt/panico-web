@@ -1631,6 +1631,12 @@ body::after {
   animation: lightbox-in 0.4s ease both;
 }
 
+/* El `[hidden]` del diálogo no queda anulado por `display: flex` (ver same
+   patrón en .page[hidden]). Sin esto, "Cerrar" nunca oculta el lightbox. */
+.lightbox[hidden] {
+  display: none !important;
+}
+
 .lightbox--instantaneo {
   animation: none;
 }
